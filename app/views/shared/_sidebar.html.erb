@@ -1,0 +1,28 @@
+<%= render "shared/login_form" unless current_member %>
+
+<h2>最新ニュース</h2>
+
+<%
+  articles = Article.visible.order(released_at: :desc).limit(5)
+  articles = articles.open_to_the_public unless current_member
+%>
+<ul>
+  <% articles.each do |article| %>
+    <li><%= link_to article.title, article %></li>
+  <% end %>
+</ul>
+
+<h2>会員のブログ</h2>
+<%
+  # 現在ログインしている人がいればその人の記事と会員のみと公開記事、それ以外は公開記事を取得。
+  entries = Entry.readable_for(current_member).order(posted_at: :desc).limit(5)
+%>
+
+<ul>
+  <% entries.each do |entry| %>
+    <li>
+      <%= link_to entry.title, entry %>
+      by<%= link_to entry.author.name, [entry.author, :entries] %>
+    </li>
+  <% end %>
+</ul>
