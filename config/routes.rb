@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
   resources :articles
-  resources :entries
+  resources :entries do
+    resources :images, controller: "entry_images" do
+      patch :move_higher, :move_lower, on: :member
+    end
+  end
 end
