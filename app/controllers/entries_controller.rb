@@ -63,6 +63,27 @@ class EntriesController < ApplicationController
   def destroy
     @entry = current_member.entries.find(params[:id])
     @entry.destroy
-    redirect_to @entry, notice: "記事を削除しました。"
+    redirect_to :entries, notice: "記事を削除しました。"
   end
+
+  # 投票
+  def like
+    @entry = Entry.published.find(params[:id])
+    current_member.voted_entries << @entry
+    redirect_to @entry, notice: "投票しました"
+  end
+
+  # 投票削除
+  def unlike
+    current_member.voted_entries.destroy(Entry.find(params[:id]))
+    redirect_to :voted_entries, notice: "削除しました"
+  end
+
+  # 投票した記事一覧
+  def voted
+    @entries = current_member.voted_entries.published
+                   .order("votes.created_at DESC")
+                   .page(params[:page]).per(15)
+  end
+
 end
