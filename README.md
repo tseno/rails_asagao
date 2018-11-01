@@ -1,24 +1,32 @@
-# README
+# 簡易SNSサイトの作成
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+参考：[改訂4版 基礎 Ruby on Rails (IMPRESS KISO SERIES)](https://www.amazon.co.jp/%E6%94%B9%E8%A8%824%E7%89%88-Ruby-Rails-IMPRESS-KISO/dp/429500460X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1541080500&sr=1-1)
 
-Things you may want to cover:
+## トップ画面
 
-* Ruby version
+![トップ画面](https://github.com/tseno/rails_asagao/blob/master/docimg/top.png)
 
-* System dependencies
 
-* Configuration
+## ブログ一覧画面
 
-* Database creation
+![ブログ一覧画面](https://github.com/tseno/rails_asagao/blob/master/docimg/entries_index.png)
 
-* Database initialization
+## ブログ画像管理画面
 
-* How to run the test suite
+![ブログ画像管理画面](https://github.com/tseno/rails_asagao/blob/master/docimg/entries_image_index.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## ブログ詳細画面
 
-* Deployment instructions
+![ ブログ詳細画面](https://github.com/tseno/rails_asagao/blob/master/docimg/entries_show.png)
 
-* ...
+## ニュース一覧画面
+
+![ニュース一覧画面](https://github.com/tseno/rails_asagao/blob/master/docimg/articles_index.png)
+
+## ニュース管理一覧画面
+
+![ニュース管理一覧画面](https://github.com/tseno/rails_asagao/blob/master/docimg/articles_admin_index.png)
+
+## 会員管理一覧画面
+
+![会員管理一覧画面](https://github.com/tseno/rails_asagao/blob/master/docimg/members_admin_index.png)
